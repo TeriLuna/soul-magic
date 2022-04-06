@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 
 function Item({ id, name, category, price, image }) {
