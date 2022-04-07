@@ -4,7 +4,7 @@ import s from "./CardWidget.module.css";
 
 export default function CardWidget() {
   return (
-    <div className={s.whiteIcon} size={5}>
+    <div className={s.whiteIcon}>
       <BiShoppingBag />
     </div>
   );

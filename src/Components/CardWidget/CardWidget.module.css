@@ -1,3 +1,7 @@
 .whiteIcon {
   color: #fff;
+  justify-content: flex-end;
+}
+.whiteIcon:hover {
+  color: #fff265;
 }

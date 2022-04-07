@@ -28,8 +28,8 @@ function NavBar() {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+          <CardWidget />
         </Container>
-        <CardWidget />
       </Navbar>
     </>
   );

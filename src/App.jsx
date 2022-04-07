@@ -1,13 +1,15 @@
-import "./App.css";
-import NavBar from "./Components/NavBar/NavBar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
+import "./assets/scss/style.scss";
 import ItemListContainer from "./Components/Items/ItemListContainer";
+import ItemDetailContainer from "./Components/Items/ItemDetailContainer";
+import HomeHero from "./Components/Home/HomeHero";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <HomeHero /> */}
       <ItemListContainer />
+      {/* <ItemDetailContainer /> */}
     </div>
   );
 }
