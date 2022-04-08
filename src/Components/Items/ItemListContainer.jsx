@@ -17,9 +17,6 @@ export default function ItemListContainer() {
 
   return (
     <div>
-      {/* Header */}
-      <NavBar />
-      {/* End Header */}
 
       {/* Main */}
       <main className="page-wrapper">
@@ -43,7 +40,7 @@ export default function ItemListContainer() {
 
               {/* Products list */}
               <div className="row ">
-                <ItemList products={products} variation='text-left mt--40' />
+                <ItemList products={products} />
               </div>
               {/* End Products list */}
 
@@ -53,9 +50,6 @@ export default function ItemListContainer() {
       </main>
       {/* End Main */}
 
-      {/* Footer */}
-      <Footer />
-      {/* End Footer */}
     </div>
   );
 }

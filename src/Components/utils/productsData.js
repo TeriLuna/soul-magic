@@ -5,6 +5,7 @@ export const productsData = [
     price: "8.000",
     categories: [{ id: 1, name: "decoration", slug: "decoration" }],
     image: "https://picsum.photos/200/200/?random",
+    description:'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quaerat!',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const productsData = [
     price: "10.000",
     categories: [{ id: 1, name: "decoration", slug: "decoration" }],
     image: "https://picsum.photos/200/200/?random",
+    description:'loremm ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quaerat!',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const productsData = [
     price: "80.000",
     categories: [{ id: 2, name: "environment", slug: "environment" }],
     image: "https://picsum.photos/200/200/?random",
+    description:'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quaerat!',
   },
   {
     id: 4,
@@ -26,5 +29,6 @@ export const productsData = [
     price: "10.000",
     categories: [{ id: 3, name: "sounds", slug: "sounds" }],
     image: "https://picsum.photos/200/200/?random",
+    description:'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quaerat!',
   },
 ];

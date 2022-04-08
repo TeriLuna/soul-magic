@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../../Components/NavBar/NavBar";
-import Footer from "../footer/Footer";
 
 const HomeList = [
   {
@@ -9,7 +7,7 @@ const HomeList = [
     title: "Soul Magic",
     description: "Connecting the soul to everything",
     buttonText: "Contact Us",
-    buttonLink: "/contact",
+    buttonLink: "/productList",
   },
 ];
 
@@ -17,7 +15,6 @@ export default function HomeHero() {
   return (
     <>
       <div className="active-dark bg_color--10">
-      <NavBar />
         <div className="slider-wrapper">
           {HomeList.map((value, index) => (
             <div
@@ -59,7 +56,6 @@ export default function HomeHero() {
             </div>
           ))}
         </div>
-        <Footer />
       </div>
     </>
   );
