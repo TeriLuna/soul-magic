@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../footer/Footer";
-import NavBar from "../NavBar/NavBar";
+import { useParams } from "react-router-dom";
 import customFetch from "../utils/customFetch";
 import { productsData } from "../utils/productsData";
 import ItemList from "./ItemList";
@@ -8,22 +7,60 @@ import ItemList from "./ItemList";
 export default function ItemListContainer() {
   // Promesa
   const [products, setProducts] = useState([]);
+  
+
+  // -----------------------------------------------------------------------------
+
+  // const { id } = useParams();
+  
+  // useEffect(() => {
+  //   const promiseProducts = new Promise((res, rej) => {
+  //     setTimeout(() => {
+
+  //       if (id) {
+  //         debugger;
+  //         res(productsData.filter(item => item.categories.id == id));
+  //       } else {
+  //       res(productsData);
+  //       }
+  //     }, 1000);
+  //   });
+  //   promiseProducts.then((res) => {
+  //     setProducts(res);
+  //   });
+  // }, [id]);setCategory(result
+
+  // -----------------------------------------------------------------------------
+
+  // useEffect(() => {
+  //   customFetch(500, productsData)
+  //     .then((result) => setProducts(result))
+  //     .catch((error) => console.log(error));
+  // }, [products]);
+
+  const { id } = useParams();
 
   useEffect(() => {
-    customFetch(3000, productsData)
-      .then((result) => setProducts(result))
+    customFetch(500, productsData)
+      .then((result)=>{
+        const productsFiltered = result.filter(item => item.category === id)
+        if(id){
+          setProducts(productsFiltered)
+        }else{
+          setProducts(productsData)
+        }
+      })
       .catch((error) => console.log(error));
-  }, [products]);
+  }, [id]);
+
 
   return (
-    <div>
-
+    <div className="section">
       {/* Main */}
       <main className="page-wrapper">
-        <div className="portfolio-area py-3 bg_color--5">
+        <div className="portfolio-area">
           <div className="portfolio-sacousel-inner">
-            <div className="container">
-
+            <div className="container me--4">
               <div className="row">
                 <div className="col-lg-12">
                   <div className="section-title text-center mb--40">
@@ -39,17 +76,15 @@ export default function ItemListContainer() {
               </div>
 
               {/* Products list */}
-              <div className="row ">
+              <div className="row">
                 <ItemList products={products} />
               </div>
               {/* End Products list */}
-
             </div>
           </div>
         </div>
       </main>
       {/* End Main */}
-
     </div>
   );
 }

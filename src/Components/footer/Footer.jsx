@@ -2,15 +2,15 @@ import React from "react";
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
+  FaLinkedinIn
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo/logo-symbol.png";
 
 const SocialShare = [
   { Social: <FaFacebookF />, link: "https://www.facebook.com/" },
   { Social: <FaLinkedinIn />, link: "https://www.linkedin.com/" },
   { Social: <FaInstagram />, link: "https://www.instagram.com/" },
-  { Social: <FaTwitter />, link: "https://twitter.com/" },
 ];
 
 export default function Footer() {
@@ -22,10 +22,9 @@ export default function Footer() {
             <div className="col-lg-4 col-md-6 col-sm-6 col-12">
               <div className="inner">
                 <div className="logo text-center text-sm-left mb_sm--20">
-                  <a href="/home-one">
-                    <h3 color="white">Soul Magic</h3>
-                    {/* <img src="/assets/images/logo/logo-light.png" alt="Logo images"/> */}
-                  </a>
+                    <Link  to={`/`}>
+                      <img src={logo} alt="Logo of Soul Magic"/>
+                    </Link>
                 </div>
               </div>
             </div>
@@ -44,7 +43,7 @@ export default function Footer() {
               <div className="inner text-lg-right text-center mt_md--20 mt_sm--20">
                 <div className="text">
                   <a href="http://fckingbrandme.com/" target="_blank" rel="noreferrer">
-                    <p>
+                    <p className="text-white">
                       Copyright © 2022 Fcking Brand Me. All Rights Reserved.
                     </p>
                   </a>

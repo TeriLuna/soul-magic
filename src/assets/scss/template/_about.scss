@@ -38,6 +38,7 @@
             flex-direction: column-reverse;
         }
         .content-wrapper {
+            
             .content {
                 background: #101010;
                 padding: 120px 100px;
@@ -174,13 +175,14 @@
 
 
 .about-wrapper {
+    
     .thumbnail {
         position: relative;
         z-index: 2;
+
         img{
             border-radius: 8px;
             box-shadow: none;
-           
         }
     }
 }

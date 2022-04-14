@@ -135,23 +135,22 @@ Slider Default Style
             padding-top: 150px;
             padding-bottom: 150px;
         }
-        
 
         &.fullscreen {
             min-height: 950px;
             @media #{$laptop-device} {
                 padding-top: 160px;
                 padding-bottom: 160px;
-                min-height: auto;
+                // min-height: auto;
             }
             @media #{$lg-layout} {
-                min-height: auto;
+                // min-height: auto;
             }
             @media #{$md-layout} {
-                min-height: auto;
+                // min-height: 75vh;
             }
             @media #{$sm-layout} {
-                min-height: auto;
+                // min-height: auto;
             }
         }
 
@@ -164,7 +163,7 @@ Slider Default Style
                 height: auto;
             }
             @media #{$sm-layout} {
-                height: auto;
+                height: 75vh;
             }
         }
 

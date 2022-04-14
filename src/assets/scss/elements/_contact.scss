@@ -1,6 +1,7 @@
 // Contact Styles 
 
 .contact-form--1 {
+
     label {
         display: block;
         margin-bottom: 0;
@@ -11,16 +12,17 @@
         display: block;
         width: 100%;
         padding: 0 20px;
-        border: 2px solid rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(99, 99, 99, 0.356);
         border-radius: 5px;
         transition: all 0.3s ease;
         height: 50px;
         line-height: 46px;
         margin-bottom: 20px;
         outline: none;
-        color: $heading-color;
+        color: $black-color;
         font-size: 15px;
         letter-spacing: 0.1px;
+        background-color: rgba(255, 255, 255, 0.671);
         &:focus {
             border-color: var(--color-primary);
         }
@@ -42,7 +44,7 @@
     padding-top: 40px;
     background: #fff;
     padding-bottom: 50px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     transition: 0.3s;
     .icon {
         color: var(--color-primary);
@@ -61,7 +63,7 @@
         p {
             font-size: 18px;
             margin-bottom: 0;
-            color: rgba(29, 29, 36, 0.75);
+            color: rgba(171, 224, 209, 0.75);
             @media #{$lg-layout} {
                 font-size: 16px;
             }
@@ -86,7 +88,7 @@
                 }
             }
             a {
-                color: rgba(29, 29, 36, 0.75);
+                color: rgba(155, 238, 155, 0.75);
                 @extend %transition;
                 &:hover {
                     color: var(--color-primary);
@@ -115,9 +117,10 @@ textarea {
     span {
         display: inline-block;
         font-size: 14px;
+        color: var(--color-black);
     }
     .link {
-        color: var(--color-heading);
+        color: var(--color-e4e6ea);
         font-weight: 700;
         font-size: 17px;
         display: inline-block;

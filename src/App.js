@@ -1,23 +1,28 @@
 import "./App.scss";
-import "./assets/scss/style.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./Components/Items/ItemListContainer";
 import ItemDetailContainer from "./Components/Items/ItemDetailContainer";
 import HomeHero from "./Components/Home/HomeHero";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Components/footer/Footer";
+import Contact from "./Components/contact/Contact";
+import NotFound from "./Components/404/NotFound";
+import About from "./Components/about/About";
 
 export default function App() {
   return (
     <BrowserRouter>
 
-    <NavBar />
+    <NavBar/>
 
       <Routes>
         <Route exact path="/" element={<HomeHero />} />
-        <Route exact path="/productDetail" element={<ItemDetailContainer />} />
-        <Route exact path="/productList" element={<ItemListContainer />} />
-        {/* <Route exact path="/categories/enviroment" element={<ItemListContainer />} /> */}
+        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+        <Route exact path="/allProducts" element={<ItemListContainer />} />
+        <Route exact path="/category/:id" element={<ItemListContainer />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

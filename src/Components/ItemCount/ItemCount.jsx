@@ -20,23 +20,25 @@ function ItemCount({ stock }) {
 
   return (
     <>
-      <div>
-        <Button variant="outline-secondary" onClick={onRemove}>
-          -
-        </Button>
-        <span>{count}</span>
-        <Button variant="outline-secondary" onClick={onAdd}>
-          +
-        </Button>
-      </div>
-      <div>
-        {" "}
-        <Button
-          variant="light"
-          onClick={() => alert(`Added to cart: ${count} units`)}
-        >
-          Add to Cart
-        </Button>
+      <div className='d-flex align-items-center flex-column'>
+        <div>
+          <Button variant="outline-secondary" onClick={onRemove}>
+            -
+          </Button>
+          <span className="m-3">{count}</span>
+          <Button variant="outline-secondary" onClick={onAdd}>
+            +
+          </Button>
+        </div>
+        <div className="mt-2">
+          {" "}
+          <Button
+            variant="outline-dark"
+            onClick={() => alert(`Added to cart: ${count} units`)}
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
     </>
   );
