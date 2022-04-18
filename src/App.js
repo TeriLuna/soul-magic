@@ -8,9 +8,12 @@ import Footer from "./Components/footer/Footer";
 import Contact from "./Components/contact/Contact";
 import NotFound from "./Components/404/NotFound";
 import About from "./Components/about/About";
+import AddToCart from "./Components/AddToCart/AddToCart";
 
 export default function App() {
+
   return (
+
     <BrowserRouter>
 
     <NavBar/>
@@ -22,11 +25,13 @@ export default function App() {
         <Route exact path="/category/:id" element={<ItemListContainer />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/cart" element={<AddToCart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
 
     </BrowserRouter>
+
   );
 }

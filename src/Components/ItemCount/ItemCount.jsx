@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 
-function ItemCount({ stock }) {
+export default function ItemCount({ stock, handleHidden }) {
   // COUNT BUTTONS
   const initial = 1;
 
@@ -20,7 +20,7 @@ function ItemCount({ stock }) {
 
   return (
     <>
-      <div className='d-flex align-items-center flex-column'>
+      <div className="d-flex align-items-center flex-column">
         <div>
           <Button variant="outline-secondary" onClick={onRemove}>
             -
@@ -32,10 +32,7 @@ function ItemCount({ stock }) {
         </div>
         <div className="mt-2">
           {" "}
-          <Button
-            variant="outline-dark"
-            onClick={() => alert(`Added to cart: ${count} units`)}
-          >
+          <Button onClick={handleHidden} variant="outline-dark">
             Add to Cart
           </Button>
         </div>
@@ -43,5 +40,3 @@ function ItemCount({ stock }) {
     </>
   );
 }
-
-export default ItemCount;

@@ -7,36 +7,6 @@ import ItemList from "./ItemList";
 export default function ItemListContainer() {
   // Promesa
   const [products, setProducts] = useState([]);
-  
-
-  // -----------------------------------------------------------------------------
-
-  // const { id } = useParams();
-  
-  // useEffect(() => {
-  //   const promiseProducts = new Promise((res, rej) => {
-  //     setTimeout(() => {
-
-  //       if (id) {
-  //         debugger;
-  //         res(productsData.filter(item => item.categories.id == id));
-  //       } else {
-  //       res(productsData);
-  //       }
-  //     }, 1000);
-  //   });
-  //   promiseProducts.then((res) => {
-  //     setProducts(res);
-  //   });
-  // }, [id]);setCategory(result
-
-  // -----------------------------------------------------------------------------
-
-  // useEffect(() => {
-  //   customFetch(500, productsData)
-  //     .then((result) => setProducts(result))
-  //     .catch((error) => console.log(error));
-  // }, [products]);
 
   const { id } = useParams();
 
