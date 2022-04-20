@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { FiCheck, FiHeart, FiSend, FiStar } from "react-icons/fi";
+import { FiHeart, FiStar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export default function About() {

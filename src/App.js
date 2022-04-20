@@ -8,30 +8,39 @@ import Footer from "./Components/footer/Footer";
 import Contact from "./Components/contact/Contact";
 import NotFound from "./Components/404/NotFound";
 import About from "./Components/about/About";
-import AddToCart from "./Components/AddToCart/AddToCart";
+import CartView from "./Components/AddToCart/CartView";
+import {  CartProvider } from "./Context/CartProvider";
 
-export default function App() {
-
+function AppComponents() {
   return (
-
-    <BrowserRouter>
-
-    <NavBar/>
+    <>
+      <NavBar />
 
       <Routes>
         <Route exact path="/" element={<HomeHero />} />
-        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-        <Route exact path="/allProducts" element={<ItemListContainer />} />
-        <Route exact path="/category/:id" element={<ItemListContainer />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/cart" element={<AddToCart />} />
+        <Route exact path="item/:id" element={<ItemDetailContainer />} />
+        <Route exact path="allProducts" element={<ItemListContainer />} />
+        <Route exact path="category/:id" element={<ItemListContainer />} />
+        <Route exact path="about" element={<About />} />
+        <Route exact path="contact" element={<Contact />} />
+        <Route exact path="cart" element={<CartView />} />
+
+        {/* <Route exact path="load" element={<Loading />} /> */}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
+    </>
+  );
+}
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <CartProvider>
+        <AppComponents />
+      </CartProvider>
     </BrowserRouter>
-
   );
 }

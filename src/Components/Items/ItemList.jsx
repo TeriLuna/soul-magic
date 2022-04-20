@@ -1,7 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import Item from "./Item";
 
-export default function ItemList({ products }) {
+export default memo(function ItemList({ products }) {
+
   return products.map((product) => {
     return (
       <>
@@ -9,4 +10,4 @@ export default function ItemList({ products }) {
       </>
     );
   });
-}
+})

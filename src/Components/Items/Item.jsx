@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-function Item({ id, name, category, price, image }) {
+export default memo(function Item(product) {
+  const { id, name, category, price, image } = product;
   return (
     <>
       <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
@@ -15,12 +16,10 @@ function Item({ id, name, category, price, image }) {
             </Card.Title>
             <Card.Text className="d-flex flex-lg-row flex-end">${price}</Card.Text>
             <span className="text-italic">{category}</span>
-            <ItemCount className='mt-5' stock={15} />
+            <ItemCount product={product} className='mt-5' stock={15} />
           </Card.Body>
         </Card>
       </div>
     </>
   );
-}
-
-export default Item;
+})

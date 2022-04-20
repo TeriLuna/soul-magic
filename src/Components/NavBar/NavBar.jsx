@@ -34,7 +34,9 @@ class NavBar extends Component {
     }
 
     return (
-      <header className={`header-area formobile-menu header--static color-white`}>
+      <header
+        className={`header-area formobile-menu header--static color-white`}
+      >
         <div className="header-wrapper" id="header-wrapper">
           <div className="header-left">
             <div className="logo">
@@ -51,42 +53,38 @@ class NavBar extends Component {
                 </li>
 
                 <li className="has-droupdown">
-                  <Link to="/allProducts">Products</Link>
+                  <Link to="allProducts">Products</Link>
                   <ul className="submenu">
                     <li>
-                      <Link to="/allProducts">All products</Link>
+                      <Link to="allProducts">All products</Link>
                     </li>
                     <li>
-                      <Link to="/category/books">Books</Link>
+                      <Link to="category/books">Books</Link>
                     </li>
                     <li>
-                      <Link to="/category/decoration">Decoration</Link>
+                      <Link to="category/decoration">Decoration</Link>
                     </li>
                     <li>
-                      <Link to="/category/environment">Environment</Link>
+                      <Link to="category/environment">Environment</Link>
                     </li>
                     <li>
-                      <Link to="/category/sounds">Sounds</Link>
+                      <Link to="category/sounds">Sounds</Link>
                     </li>
                   </ul>
                 </li>
 
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="about">About</Link>
                 </li>
 
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="contact">Contact</Link>
                 </li>
               </ul>
             </nav>
             <div className="header-btn">
-              <Link
-                to="allProducts"
-                className="btn-default btn-outline btn-opacity"
-              >
-                <span className="text">Buy </span>
-                <CardWidget />
+              <Link to="cart" className="btn-default btn-outline btn-opacity">
+                <CardWidget size='xs' />
               </Link>
             </div>
             {/* Start Humberger Menu  */}
