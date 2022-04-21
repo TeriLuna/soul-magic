@@ -14,12 +14,10 @@ export default function ItemListContainer() {
   const { id } = useParams();
 
   useEffect(() => {
-
-    setError(false)
-    setLoading(true)
+    setError(false);
+    setLoading(true);
 
     customFetch(500, productsData)
-
       .then((result) => {
         const productsFiltered = result.filter((item) => item.category === id);
         if (id) {
@@ -38,40 +36,38 @@ export default function ItemListContainer() {
 
   return (
     <>
-    {loading ? <Loading /> : null}
-    {error && <>Ocurrio un error, contacta al email</>}
+      {loading ? <Loading /> : null}
+      {error && <>Ocurrio un error, contacta al email</>}
 
-    {/* MAIN */}
-      <div className="section">
-        <main className="page-wrapper">
-          <div className="portfolio-area">
-            <div className="portfolio-sacousel-inner">
-              <div className="container me--4">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <div className="section-title text-center mb--40">
-                      <h2 className="title">Our products</h2>
-                      <p className="description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Aut at veniam ipsa, temporibus velit, adipisci
-                        accusamus minima molestiae amet nulla dolorum magnam
-                        porro quas itaque doloribus culpa. Sunt, quod similique!
-                      </p>
-                    </div>
+      {/* MAIN */}
+      <main className="page-wrapper pt--50">
+        <div className="portfolio-area">
+          <div className="portfolio-sacousel-inner">
+            <div className="container me--4">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="section-title text-center mb--40">
+                    <h2 className="title">Our products</h2>
+                    <p className="description">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Aut at veniam ipsa, temporibus velit, adipisci accusamus
+                      minima molestiae amet nulla dolorum magnam porro quas
+                      itaque doloribus culpa. Sunt, quod similique!
+                    </p>
                   </div>
                 </div>
-
-                {/* Products list */}
-                <div className="row">
-                  <ItemList products={products} />
-                </div>
-                {/* End Products list */}
               </div>
+
+              {/* Products list */}
+              <div className="row">
+                <ItemList products={products} />
+              </div>
+              {/* End Products list */}
             </div>
           </div>
-        </main>
-        {/* End Main */}
-      </div>
+        </div>
+      </main>
+      {/* End Main */}
     </>
   );
 }

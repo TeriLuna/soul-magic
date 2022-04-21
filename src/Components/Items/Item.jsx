@@ -9,7 +9,9 @@ export default memo(function Item(product) {
     <>
       <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
         <Card key={id}>
-          <Card.Img variant="top" src={image} />
+          <Link to={"/item/" + id}>
+            <Card.Img variant="top" src={image} />{" "}
+          </Link>
           <Card.Body>
             <Card.Title className="d-flex flex-lg-row">
               <Link to={"/item/" + id}>{name}</Link>

@@ -1,12 +1,13 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import contactImg from "../../assets/images/about/about-12.jpg";
 
 export default function Contact() {
   return (
     <>
       <div className="section">
-        <div className="container">
-          <div className="contact-form--1">
+        <Container>
+          <div className="contact-form--1 mt--50">
             <div className="row row--35 align-items-start">
               <div className="col-lg-6 order-2 order-lg-1">
                 <div className="section-title text-left mb--50">
@@ -79,14 +80,9 @@ export default function Contact() {
                         type="submit"
                         value="submit"
                         name="submit"
-                        // id="mc-embedded-subscribe"
                       >
                         Submit Now
                       </button>
-                    </div>
-
-                    <div className="rn-form-group">
-                      {/* {result ? <Result /> : null} */}
                     </div>
                   </form>
                 </div>
@@ -99,7 +95,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail(product) {
 
-  const { name, price, description, id, image, alt, stock } = product.product;
+  const { name, price, description, id, image, alt } = product.product;
   const [hiddenCount, setHiddenCount] = useState(true);
   const handleHidden = () => {
     setHiddenCount((s) => !s);
@@ -42,7 +42,7 @@ export default function ItemDetail(product) {
                 <img src="https://picsum.photos/800/900/?random" alt={alt} />
               </Col>
               <Col md={5} className="mt-sm-4">
-                <h1 className="text-center">"{name}"</h1>
+                <h1 className="text-center">{name}</h1>
                 <div className="text-center">
                   <h3 className="mb-0 theme-color fontWeight400">$ {price}</h3>
                   <span className="fontWeight100"> Item: {id}</span>

@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
-// import { Link } from "react-router-dom";
-import { CartContext } from "../../Context/CartProvider";
 
 export default function AddToCartButton() {
   return (
