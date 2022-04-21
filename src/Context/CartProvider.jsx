@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product, count) => {
     const productsInCart = cart.products;
     if (isInCart(product)) {
-      findProduct(product).count = count;
+      findProduct(product).count += count;
     } else {
       productsInCart.push({ product: product, count: count });
     }
@@ -60,6 +60,7 @@ export const CartProvider = ({ children }) => {
   // Total price of Cart
   const totalPriceProductsFuntion = () => {
     let total = 0;
+
     cart.products.map((product) => {
       total += product.product.price * product.count;
       return total;

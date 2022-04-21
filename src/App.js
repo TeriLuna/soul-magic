@@ -23,7 +23,7 @@ function AppComponents() {
         <Route exact path="category/:id" element={<ItemListContainer />} />
         <Route exact path="about" element={<About />} />
         <Route exact path="contact" element={<Contact />} />
-        <Route exact path="cart" element={<CartView />} />
+        <Route exact path="/cart" element={<CartView />} />
 
         {/* <Route exact path="load" element={<Loading />} /> */}
 

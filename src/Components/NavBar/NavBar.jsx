@@ -83,7 +83,7 @@ class NavBar extends Component {
               </ul>
             </nav>
             <div className="header-btn">
-              <Link to="cart" className="btn-default btn-outline btn-opacity">
+              <Link to="/cart" className="btn-default btn-outline btn-opacity">
                 <CardWidget size='xs' />
               </Link>
             </div>

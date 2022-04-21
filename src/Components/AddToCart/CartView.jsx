@@ -25,8 +25,9 @@ export default function CartView() {
                   </tr>
                 </thead>
                 <tbody>
-                  {cart.products.map((item, index) => (
-                    <tr key={index}>
+                  {cart.products.map((item, index) => {
+
+                    return (<tr key={index}>
                       <td>
                         <BsFillTrashFill onClick={()=>{removeFromCart(item.product)}} />
                       </td>
@@ -34,8 +35,8 @@ export default function CartView() {
                       <td>{item.product.price}</td>
                       <td>{item.count}</td>
                       <td>{item.count * item.product.price}</td>
-                    </tr>
-                  ))}
+                    </tr>)
+                  })}
                 </tbody>
                 Total: {totalPriceProducts}
                 <Button variant="danger" onClick={()=>{clearCart()}}>

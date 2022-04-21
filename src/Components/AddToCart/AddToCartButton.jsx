@@ -1,17 +1,14 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartProvider";
 
-export default function AddToCartButton({product, count}) {
-
-  const { addToCart } = useContext(CartContext)
-
+export default function AddToCartButton() {
   return (
     <>
-      <Link to="cart">
-        <Button className="btn-default btn-outline btn-opacity btn-lg" onClick={()=>{addToCart({...product, count})}}>Go to Cart</Button>
-      </Link>
+      <Button className="btn-default btn-outline btn-opacity btn-lg">
+        Go to Cart
+      </Button>
     </>
   );
 }

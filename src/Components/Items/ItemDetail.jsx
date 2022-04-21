@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Accordion, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AddToCartButton from "../AddToCart/AddToCartButton";
 import ItemCount from "../ItemCount/ItemCount";
 
-export default function ItemDetail({
-  product: { name, price, description, id, image, alt },
-}) {
+export default function ItemDetail(product) {
+
+  const { name, price, description, id, image, alt, stock } = product.product;
   const [hiddenCount, setHiddenCount] = useState(true);
   const handleHidden = () => {
     setHiddenCount((s) => !s);
@@ -43,16 +44,19 @@ export default function ItemDetail({
               <Col md={5} className="mt-sm-4">
                 <h1 className="text-center">"{name}"</h1>
                 <div className="text-center">
-
-                    <h3 className="mb-0 theme-color fontWeight400">$ {price}</h3>
-                    <span className="fontWeight100"> Item: {id}</span>
-
+                  <h3 className="mb-0 theme-color fontWeight400">$ {price}</h3>
+                  <span className="fontWeight100"> Item: {id}</span>
                 </div>
                 <Col className="mt-5 text-center">
                   {hiddenCount ? (
-                    <ItemCount handleHidden={handleHidden} />
+                    <ItemCount
+                      product={product.product}
+                      handleHidden={handleHidden}
+                    />
                   ) : (
-                    <AddToCartButton />
+                    <Link to="/cart">
+                      <AddToCartButton />
+                    </Link>
                   )}
                 </Col>
                 <Accordion className="mt-5">

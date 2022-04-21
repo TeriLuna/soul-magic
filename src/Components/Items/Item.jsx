@@ -12,14 +12,16 @@ export default memo(function Item(product) {
           <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title className="d-flex flex-lg-row">
-              <Link to={'/item/' + id}>{name}</Link>
+              <Link to={"/item/" + id}>{name}</Link>
             </Card.Title>
-            <Card.Text className="d-flex flex-lg-row flex-end">${price}</Card.Text>
+            <Card.Text className="d-flex flex-lg-row flex-end">
+              ${price}
+            </Card.Text>
             <span className="text-italic">{category}</span>
-            <ItemCount product={product} className='mt-5' stock={15} />
+            <ItemCount product={product} className="mt-5" />
           </Card.Body>
         </Card>
       </div>
     </>
   );
-})
+});

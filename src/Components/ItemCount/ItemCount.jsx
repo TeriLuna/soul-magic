@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartProvider";
 
-export default function ItemCount({ stock, handleHidden, product }) {
+export default function ItemCount({handleHidden, product }) {
 
   // COUNT BUTTONS
   const { addToCart } = useContext(CartContext);
@@ -14,7 +14,7 @@ export default function ItemCount({ stock, handleHidden, product }) {
     }
   };
   const onAdd = () => {
-    if (count < stock) {
+    if (count < product.stock) {
       setCount(count + 1);
     }
   };
