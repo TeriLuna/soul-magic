@@ -5,7 +5,7 @@ export default function AddToCartButton() {
   return (
     <>
       <Button className="btn-default btn-outline btn-opacity btn-lg">
-        Go to Cart
+        End purchase
       </Button>
     </>
   );

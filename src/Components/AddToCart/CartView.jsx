@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { CartContext } from "../../Context/CartProvider";
 import { BsFillTrashFill } from "react-icons/bs";
+import EmptyCart from "./EmptyCart";
 
-export default function CartView() {
+function CartViewWithProducts() {
   const { cart, totalPriceProducts, removeFromCart, clearCart } =
     useContext(CartContext);
 
@@ -90,5 +91,14 @@ export default function CartView() {
         </Container>
       </div>
     </>
+  );
+}
+
+export default function CartView() {
+  const { cart } = useContext(CartContext);
+  return cart.products !== undefined && cart.products.length !== 0 ? (
+    <CartViewWithProducts />
+  ) : (
+    <EmptyCart />
   );
 }

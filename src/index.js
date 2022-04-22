@@ -4,6 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './App.scss';
+import { initializeApp } from "firebase/app";
+
+//Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDzE2vDijXS3SqvnN24nz1-f23AIt1pLIQ",
+  authDomain: "soul-magic-db606.firebaseapp.com",
+  projectId: "soul-magic-db606",
+  storageBucket: "soul-magic-db606.appspot.com",
+  messagingSenderId: "78786758406",
+  appId: "1:78786758406:web:72c734b5001559af688087"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
