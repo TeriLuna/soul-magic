@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-export default memo(function Item(product) {
+export default memo(function Item({ product }) {
   const { id, name, category, price, image } = product;
   return (
     <>
@@ -20,7 +20,7 @@ export default memo(function Item(product) {
               ${price}
             </Card.Text>
             <span className="text-italic">{category}</span>
-            <ItemCount product={product} className="mt-5" />
+            <ItemCount key={id} product={product} className="mt-5" />
           </Card.Body>
         </Card>
       </div>

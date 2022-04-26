@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import customFetch from "../utils/customFetch";
-import { productsData } from "../utils/productsData";
 import ItemList from "./ItemList";
+import {
+  collection,
+  getFirestore,
+  getDocs,
+  where,
+  query,
+} from "firebase/firestore";
 
 export default function ItemListContainer() {
-  // Promesa
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -14,23 +18,31 @@ export default function ItemListContainer() {
   const { id } = useParams();
 
   useEffect(() => {
-    setError(false);
     setLoading(true);
+    setError(false);
 
-    customFetch(500, productsData)
-      .then((result) => {
-        const productsFiltered = result.filter((item) => item.category === id);
-        if (id) {
-          setProducts(productsFiltered);
-          setError(false);
-        } else {
-          setProducts(productsData);
-          setError(false);
-        }
+    const db = getFirestore();
+
+    let itemsRef;
+    if (!id) {
+      itemsRef = collection(db, "Items");
+    } else {
+      itemsRef = query(collection(db, "Items"), where("category", "==", id));
+    }
+
+    getDocs(itemsRef, id)
+      .then((res) => {
+        const resp = res.docs.filter((product) => {
+          return { id: product.id, ...product.data() };
+        });
+        setProducts(resp);
         setLoading(false);
+        setError(false);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+        setLoading(false);
       });
   }, [id]);
 

@@ -10,7 +10,6 @@ import NotFound from "./Components/404/NotFound";
 import About from "./Components/about/About";
 import CartView from "./Components/AddToCart/CartView";
 import {  CartProvider } from "./Context/CartProvider";
-import Loading from "./Components/Loading/Loading";
 
 function AppComponents() {
   return (
@@ -19,15 +18,12 @@ function AppComponents() {
 
       <Routes>
         <Route exact path="/" element={<HomeHero />} />
-        <Route exact path="item/:id" element={<ItemDetailContainer />} />
-        <Route exact path="allProducts" element={<ItemListContainer />} />
-        <Route exact path="category/:id" element={<ItemListContainer />} />
-        <Route exact path="about" element={<About />} />
-        <Route exact path="contact" element={<Contact />} />
+        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+        <Route exact path="/allProducts" element={<ItemListContainer />} />
+        <Route exact path="/category/:id" element={<ItemListContainer />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/cart" element={<CartView />} />
-
-        <Route exact path="load" element={<Loading />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
 

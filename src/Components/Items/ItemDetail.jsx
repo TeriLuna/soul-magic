@@ -5,7 +5,6 @@ import AddToCartButton from "../AddToCart/AddToCartButton";
 import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail(product) {
-
   const { name, price, description, id, image, alt } = product.product;
   const [hiddenCount, setHiddenCount] = useState(true);
   const handleHidden = () => {
