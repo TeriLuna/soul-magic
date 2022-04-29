@@ -6,13 +6,20 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({ products: [] });
 
   // Add to cart
-  const addToCart = (product, count) => {
+  const addToCart = (product, count, setCount) => {
+    console.log({countFromCartProvider: count});
     const productsInCart = cart.products;
+    let innerCount = count;
     console.log({product, cart});
-    if (isInCart(product)) {
-      findProduct(product).count += count;
+    const singleProduct = isInCart(product)
+    if (singleProduct) {
+      if(innerCount >= singleProduct.stock){
+        innerCount = singleProduct.stock;
+      }
+      singleProduct.count = innerCount;
+      setCount(innerCount);
     } else {
-      productsInCart.push({ product: product, count: count });
+      productsInCart.push({ product: product, count: innerCount });
     }
     setCart({ products: productsInCart });
   };
@@ -40,7 +47,7 @@ export const CartProvider = ({ children }) => {
     const found = cart.products.find((item) => {
       return item.product.id === product.id;
     });
-    return found ? true : false;
+    return found ? found : false;
   };
   // Clear cart
   const clearCart = () => {
