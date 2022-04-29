@@ -10,6 +10,7 @@ import NotFound from "./Components/404/NotFound";
 import About from "./Components/about/About";
 import CartView from "./Components/AddToCart/CartView";
 import {  CartProvider } from "./Context/CartProvider";
+import Form from "./Components/Form/Form";
 
 function AppComponents() {
   return (
@@ -24,6 +25,7 @@ function AppComponents() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/cart" element={<CartView />} />
+        <Route exact path="/form" element={<Form />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

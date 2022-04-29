@@ -2,8 +2,7 @@ import Button from "react-bootstrap/Button";
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartProvider";
 
-export default function ItemCount({handleHidden, product }) {
-
+export default function ItemCount({ handleHidden, product }) {
   // COUNT BUTTONS
   const { addToCart } = useContext(CartContext);
   const [count, setCount] = useState(1);
@@ -21,7 +20,7 @@ export default function ItemCount({handleHidden, product }) {
 
   const onClickAddToCart = () => {
     addToCart(product, count);
-    if(handleHidden) handleHidden();
+    if (handleHidden) handleHidden();
   };
 
   return (
@@ -38,9 +37,13 @@ export default function ItemCount({handleHidden, product }) {
         </div>
         <div className="mt-2">
           {" "}
-          <Button onClick={onClickAddToCart} variant="outline-dark">
+          <button
+            onClick={onClickAddToCart}
+            className="btn-default size-sm color-secondary"
+            style={{ borderRadius: 10 + "px" }}
+          >
             Add to Cart
-          </Button>
+          </button>
         </div>
       </div>
     </>

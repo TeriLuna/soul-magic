@@ -173,6 +173,7 @@ button {
 
         &.btn-hover-white {
             &:hover {
+                background: var(--color-secondary-rgb);
                 border-color: var(--color-white);
                 color: var(--color-white);
             }
@@ -217,7 +218,7 @@ button {
             &.btn-opacity {
                 border: 2px solid var(--color-opacity-1);
                 color: var(--color-white);
-            }
+            }btn-border
 
             &:hover {
                 color: var(--color-white);

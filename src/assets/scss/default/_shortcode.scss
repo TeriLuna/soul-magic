@@ -524,3 +524,94 @@ textarea:-ms-input-placeholder {
 img.react-parallax-bgimage {
   object-fit: contain;
 }
+
+.section-xs {
+  padding: 50px 0;
+  @media #{$laptop-device} {
+    padding: 50px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 50px 0;
+  }
+  @media #{$md-layout} {
+    padding: 30px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 30px 0;
+  }
+}
+.section-sm {
+  padding: 70px 0;
+  @media #{$laptop-device} {
+    padding: 70px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 50px 0;
+  }
+  @media #{$md-layout} {
+    padding: 30px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 30px 0;
+  }
+}
+.section, .section-md {
+  padding: 100px 0;
+  @media #{$laptop-device} {
+    padding: 100px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 90px 0;
+  }
+  @media #{$md-layout} {
+    padding: 80px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 70px 0;
+  }
+}
+.section-lg {
+  padding: 160px 0;
+  @media #{$laptop-device} {
+    padding: 160px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 140px 0;
+  }
+  @media #{$md-layout} {
+    padding: 120px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 100px 0;
+  }
+}
+.section-xl {
+  padding: 200px 0;
+  @media #{$laptop-device} {
+    padding: 200px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 180px 0;
+  }
+  @media #{$md-layout} {
+    padding: 160px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 80px 0;
+  }
+}
+.section-2xl {
+  padding: 240px 0;
+  @media #{$laptop-device} {
+    padding: 240px 0;
+  }
+  @media #{$lg-layout} {
+    padding: 200px 0;
+  }
+  @media #{$md-layout} {
+    padding: 100px 0;
+  }
+  @media #{$sm-layout} {
+    padding: 80px 0;
+  }
+}

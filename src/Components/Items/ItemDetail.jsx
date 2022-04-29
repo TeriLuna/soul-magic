@@ -1,50 +1,58 @@
 import React, { useState } from "react";
-import { Accordion, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Accordion, Carousel, Col, Container, Row } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import AddToCartButton from "../AddToCart/AddToCartButton";
 import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail(product) {
-  const { name, price, description, id, image, alt } = product.product;
+  const {
+    name,
+    price,
+    description,
+    imgb1,
+    imgb2,
+    imgb3,
+    alt,
+    category,
+    minidescription,
+  } = product.product;
   const [hiddenCount, setHiddenCount] = useState(true);
   const handleHidden = () => {
     setHiddenCount((s) => !s);
   };
 
+  const { id } = useParams();
+
   return (
     <>
       <div className="section">
-        <main className="page-wrapper py-5">
+        <main className="page-wrapper">
           <Container>
             <Row>
-              <Col md={2}>
-                <ul className="">
-                  <li>
-                    <a href="/">
-                      <img src={image} alt={alt} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <img src={image} alt={alt} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <img src={image} alt={alt} />
-                    </a>
-                  </li>
-                </ul>
+              <Col md={6}>
+                <Carousel fade>
+                  <Carousel.Item>
+                    <img className="d-block w-100" src={imgb1} alt={alt} />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img className="d-block w-100" src={imgb2} alt={alt} />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img className="d-block w-100" src={imgb3} alt={alt} />
+                  </Carousel.Item>
+                </Carousel>
               </Col>
 
-              <Col md={5}>
-                <img src="https://picsum.photos/800/900/?random" alt={alt} />
-              </Col>
-              <Col md={5} className="mt-sm-4">
-                <h1 className="text-center">{name}</h1>
+              <Col md={{side:5, offset:1}} className="mt-sm-4">
+                <h1 className="text-center fw-bolder">{name}</h1>
                 <div className="text-center">
-                  <h3 className="mb-0 theme-color fontWeight400">$ {price}</h3>
-                  <span className="fontWeight100"> Item: {id}</span>
+                  <h3 className="theme-color fw-bold">$ {price}</h3>
+                  <p className="fw-lighter">
+                    Item: {id}
+                    <span className="fw-light theme-color "> | | </span>
+                    Category: {category}
+                  </p>
+                  <h5 className="mt--20 fw-light">{minidescription}</h5>
                 </div>
                 <Col className="mt-5 text-center">
                   {hiddenCount ? (

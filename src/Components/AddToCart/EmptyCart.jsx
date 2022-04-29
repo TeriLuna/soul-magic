@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 export default function EmptyCart() {
   return (
     <>
-      <div className="section pt--100">
-        <Container>
+      <div className="section-2xl">
+        <Container className="pt--90 pb--90">
           <Row className="text-center">
             <Col md={12}>
               <h5>

@@ -8,12 +8,12 @@ import './App.scss';
 
 //Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDzE2vDijXS3SqvnN24nz1-f23AIt1pLIQ",
-  authDomain: "soul-magic-db606.firebaseapp.com",
-  projectId: "soul-magic-db606",
-  storageBucket: "soul-magic-db606.appspot.com",
-  messagingSenderId: "78786758406",
-  appId: "1:78786758406:web:72c734b5001559af688087"
+  apiKey: "AIzaSyBXNUdNkAOTi5uvzEti1n-aqwwxbfnMdzU",
+  authDomain: "soul-magic-53e04.firebaseapp.com",
+  projectId: "soul-magic-53e04",
+  storageBucket: "soul-magic-53e04.appspot.com",
+  messagingSenderId: "474784056761",
+  appId: "1:474784056761:web:330c61a654160d3926e268"
 };
 
 // Initialize Firebase

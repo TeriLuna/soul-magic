@@ -9,7 +9,6 @@ class NavBar extends Component {
     super(props);
     this.menuTrigger = this.menuTrigger.bind(this);
     this.CLoseMenuTrigger = this.CLoseMenuTrigger.bind(this);
-    //  this.subMetuTrigger = this.subMetuTrigger.bind(this);
     window.addEventListener("load", function () {
       console.log("All assets are loaded");
     });
@@ -20,18 +19,14 @@ class NavBar extends Component {
   CLoseMenuTrigger() {
     document.querySelector(".header-wrapper").classList.remove("menu-open");
   }
+
   render() {
-    let elements = document.querySelectorAll(".has-droupdown > a");
-    for (let i in elements) {
-      if (elements.hasOwnProperty(i)) {
-        elements[i].onclick = function () {
-          this.parentElement
-            .querySelector(".submenu")
-            .classList.toggle("active");
-          this.classList.toggle("open");
-        };
-      }
-    }
+    const show_hide = () => {
+      document.getElementsByClassName("submenu")[0].classList.toggle("active");
+      document
+        .getElementsByClassName("has-droupdown")[0]
+        .classList.toggle("open");
+    };
 
     return (
       <header
@@ -52,8 +47,8 @@ class NavBar extends Component {
                   <Link to="/">Home</Link>
                 </li>
 
-                <li className="has-droupdown">
-                  <Link to="allProducts">Products</Link>
+                <li className="has-droupdown" onClick={show_hide}>
+                  <Link to="#">Products</Link>
                   <ul className="submenu">
                     <li>
                       <Link to="allProducts">All products</Link>
@@ -62,10 +57,10 @@ class NavBar extends Component {
                       <Link to="category/books">Books</Link>
                     </li>
                     <li>
-                      <Link to="category/decoration">Decoration</Link>
+                      <Link to="category/quartz">Quartz</Link>
                     </li>
                     <li>
-                      <Link to="category/environment">Environment</Link>
+                      <Link to="category/essentials">Essentials</Link>
                     </li>
                     <li>
                       <Link to="category/sounds">Sounds</Link>
@@ -84,7 +79,7 @@ class NavBar extends Component {
             </nav>
             <div className="header-btn">
               <Link to="/cart" className="btn-default btn-outline btn-opacity">
-                <CardWidget size='xs' />
+                <CardWidget size="xs" />
               </Link>
             </div>
             {/* Start Humberger Menu  */}

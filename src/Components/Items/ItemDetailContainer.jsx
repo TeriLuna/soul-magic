@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
     const item = doc(db, "Items", id);
     getDoc(item)
       .then((res) => {
-        setProduct({ ...res.data() });
+        setProduct({id: id, ...res.data() });
         setLoading(false);
         setError(false);
       })

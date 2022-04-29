@@ -26,7 +26,7 @@ export default function HomeHero() {
         <div className="slider-wrapper">
           {HomeList.map((value, index) => (
             <div
-              className="slide slide-style-2 fullscreen d-flex align-items-center justify-content-center bg_image bg_image--24"
+              className="slide slide-style-2 fullscreen d-flex align-items-center justify-content-center bg_image bg_image--23"
               key={index}
               data-black-overlay="1"
             >
@@ -120,14 +120,14 @@ export default function HomeHero() {
                         ""
                       )}
                       {value.description ? (
-                        <p className="description">{value.description}</p>
+                        <p className="description text-white">{value.description}</p>
                       ) : (
                         ""
                       )}
                       {value.buttonText ? (
                         <div className="slide-btn">
                           <a
-                            className="btn-default btn-border btn-opacity"
+                            className="btn-default btn-opacity btn-hover-white"
                             href={`${value.buttonLink}`}
                           >
                             {value.buttonText}

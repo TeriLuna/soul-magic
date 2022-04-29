@@ -8,6 +8,7 @@ export const CartProvider = ({ children }) => {
   // Add to cart
   const addToCart = (product, count) => {
     const productsInCart = cart.products;
+    console.log({product, cart});
     if (isInCart(product)) {
       findProduct(product).count += count;
     } else {

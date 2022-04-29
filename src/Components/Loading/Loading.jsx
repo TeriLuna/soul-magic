@@ -1,19 +1,24 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import ReactLoading from "react-loading";
 
 export default function Loading() {
+  const LoadView = ({ type, color }) => (
+    <ReactLoading type={type} color={color} height={889} width={597} />
+  );
+
   return (
     <>
-      <div className="section d-flex justify-content-center flex-wrap" >
-        <div className="container align-content-center d-flex">
-          <div className="row">
-            <div>
-              <Spinner animation="grow" variant="info" style={{width: 100, height:100}}>
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
+      <div className="section-2xl">
+        <Container>
+          <div className="position-middle">
+            <Row>
+              <Col md={{ span: 8, offset: 3 }}>
+                <LoadView type="spinningBubbles" color="#B4C424" />
+              </Col>
+            </Row>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

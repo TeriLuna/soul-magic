@@ -9,7 +9,7 @@ import logo from "../../assets/images/logo/logo-symbol.png";
 
 const SocialShare = [
   { Social: <FaFacebookF />, link: "https://www.facebook.com/" },
-  { Social: <FaLinkedinIn />, link: "https://www.linkedin.com/" },
+  { Social: <FaLinkedinIn />, link: "https://www.linkedin.com/in/catherine-lozada/" },
   { Social: <FaInstagram />, link: "https://www.instagram.com/" },
 ];
 
@@ -33,7 +33,7 @@ export default function Footer() {
                 <ul className="social-share rn-lg-size d-flex justify-content-center liststyle">
                   {SocialShare.map((val, i) => (
                     <li key={i}>
-                      <a href={`${val.link}`}>{val.Social}</a>
+                      <a target='_blank' rel="noreferrer" href={`${val.link}`}>{val.Social}</a>
                     </li>
                   ))}
                 </ul>
