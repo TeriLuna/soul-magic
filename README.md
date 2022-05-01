@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Visit the page deployed
 
-You can learn more in the [SOUL MAGIC](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the [SOUL MAGIC](https://soul-magic-53e04.web.app/).
 ## Used libraries
 - React-bootstrap
 
