@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Particles from "react-tsparticles";
 
 const HomeList = [
@@ -126,12 +127,7 @@ export default function HomeHero() {
                       )}
                       {value.buttonText ? (
                         <div className="slide-btn">
-                          <a
-                            className="btn-default btn-opacity btn-hover-white"
-                            href={`${value.buttonLink}`}
-                          >
-                            {value.buttonText}
-                          </a>
+                          <Link to={value.buttonLink} className="btn-default btn-opacity btn-hover-white">{value.buttonText}</Link>L
                         </div>
                       ) : (
                         ""
