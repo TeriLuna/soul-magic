@@ -257,10 +257,10 @@ export default function Form() {
       <div className="section-xl">
         <Container>
           <Row>
-            <Col md={8} xs={12}>
+            <Col md={3} xs={12}>
               {sideBarCart}
             </Col>
-            <Col md={{ span: 3, offset: 1 }} xs={12} className='mt-sm-5'>
+            <Col md={{ span: 8, offset: 1 }} xs={12} className='mt-sm-5'>
               {formUI}
             </Col>
           </Row>
