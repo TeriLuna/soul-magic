@@ -35,9 +35,9 @@ class NavBar extends Component {
         <div className="header-wrapper" id="header-wrapper">
           <div className="header-left">
             <div className="logo">
-              <a href="/">
+              <Link to={"/"}>
                 <img src={logo} alt="Soul Magic logo" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="header-right">

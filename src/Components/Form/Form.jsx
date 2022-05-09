@@ -1,7 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Button, Col, Container, Modal, Row, Table } from "react-bootstrap";
 import { CartContext } from "../../Context/CartProvider";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getFirestore,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 import { CgMoon, CgSmile } from "react-icons/cg";
 import { GiUbisoftSun } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
@@ -23,8 +28,11 @@ export default function Form() {
     email: " ",
   });
 
+  let date = serverTimestamp();
+
   const order = {
     ...buyer,
+    date,
     cart,
     totalPrice: totalPriceProducts,
   };
@@ -51,7 +59,6 @@ export default function Form() {
   };
   const ProductsOrder = () => {
     return order.cart.products.map(({ product }) => {
-      console.log(product);
       return (
         <>
           <p>
@@ -127,8 +134,8 @@ export default function Form() {
                 <span className="fw-bold"> $ {order.totalPrice}</span>
               </p>
               <p>
-                And your order ID is:{" "}
-                <span className="fw-bold theme-color">{id}</span>
+                Status: Order id {" "}
+                <span className="fw-bold theme-color">{id}</span> generated.
               </p>
               <p>
                 We will contact you soon!!! <CgSmile color="green" />
@@ -150,7 +157,6 @@ export default function Form() {
 
   const firebaseOrderData = () => {
     const db = getFirestore();
-
     const ordersRef = collection(db, "orders");
 
     addDoc(ordersRef, order)
@@ -260,7 +266,7 @@ export default function Form() {
             <Col md={3} xs={12}>
               {sideBarCart}
             </Col>
-            <Col md={{ span: 8, offset: 1 }} xs={12} className='mt-sm-5'>
+            <Col md={{ span: 8, offset: 1 }} xs={12} className="mt-sm-5">
               {formUI}
             </Col>
           </Row>

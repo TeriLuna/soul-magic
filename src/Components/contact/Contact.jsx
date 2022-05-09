@@ -21,7 +21,6 @@ export default function Contact() {
   };
 
   const handleButtonSent = () => {
-    console.log(contactForm);
     if (
       contactForm.fullname === " " ||
       contactForm.email === " " ||
@@ -38,7 +37,7 @@ export default function Contact() {
 
   const onClick = () => {
     setShowModalContact(false)
-    window.location.href = "/contact";
+    window.location.href = "/";
   };
 
   const ShowModalContact = () => {

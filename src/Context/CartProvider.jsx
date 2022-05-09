@@ -7,10 +7,8 @@ export const CartProvider = ({ children }) => {
 
   // Add to cart
   const addToCart = (product, count, setCount) => {
-    console.log({countFromCartProvider: count});
     const productsInCart = cart.products;
     let innerCount = count;
-    console.log({product, cart});
     const singleProduct = isInCart(product)
     if (singleProduct) {
       if(innerCount >= singleProduct.stock){

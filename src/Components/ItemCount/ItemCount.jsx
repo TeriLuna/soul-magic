@@ -19,7 +19,6 @@ export default function ItemCount({ handleHidden, product }) {
   };
 
   const onClickAddToCart = () => {
-    console.log({countFromItemCount: count});
     addToCart(product, count, setCount);
     if (handleHidden) handleHidden();
   };
