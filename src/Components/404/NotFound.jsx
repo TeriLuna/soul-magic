@@ -33,7 +33,7 @@ export default function NotFound() {
               </div>
             </div>
             <div className="position-bottom text-center mt--100 text-white-50">
-              <p>&copy; 2022 Fcking Brand Me, All Rights Reserved.</p>
+              <p>&copy; 2022 Catherine Lozada Bedoya, All Rights Reserved.</p>
             </div>
           </div>
         </div>
